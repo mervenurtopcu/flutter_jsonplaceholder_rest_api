@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:api_kullanimi/users_model.dart';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import 'api_constants.dart';
@@ -13,8 +12,8 @@ class ApiService {
       var url = Uri.parse(ApiConstants.baseUrl + ApiConstants.usersEndpoint);
       var response = await http.get(url);
       if (response.statusCode == 200) {
-        List<UserModel> _model = userModelFromJson(response.body);
-        return _model;
+        List<UserModel> model = userModelFromJson(response.body);
+        return model;
       }
     } catch (e) {
       log(e.toString());
@@ -27,12 +26,9 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
+
       return UserModel.fromJson(jsonDecode(response.body));
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to load user');
     }
   }
@@ -49,10 +45,7 @@ class ApiService {
     Company company,
   ) async {
     final response = await http.put(
-      Uri.parse(ApiConstants.baseUrl +
-          ApiConstants.usersEndpoint +
-          '/' +
-          id.toString()),
+      Uri.parse('${ApiConstants.baseUrl}${ApiConstants.usersEndpoint}/$id'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -68,12 +61,8 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
       return UserModel.fromJson(jsonDecode(response.body));
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
       throw Exception('Failed to update user.');
     }
   }
@@ -86,15 +75,9 @@ class ApiService {
       },
     );
     if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON. After deleting,
-      // you'll get an empty JSON `{}` response.
-      // Don't return `null`, otherwise `snapshot.hasData`
-      // will always return false on `FutureBuilder`.
+
       return UserModel.fromJson(jsonDecode(response.body));
     } else {
-      // If the server did not return a "200 OK response",
-      // then throw an exception.
       throw Exception('Failed to delete user.');
     }
   }
