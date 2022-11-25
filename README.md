@@ -1,16 +1,18 @@
-# api_kullanimi
+# Rest API - JSONPLACEHOLDER
 
-A new Flutter project.
+This app was made using jsonplaceholder.
 
-## Getting Started
+## When to use JSONPLACEHOLDER
+JSONPlaceholder is a free online REST API that you can use whenever you need some fake data. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally.
 
-This project is a starting point for a Flutter application.
+For more information -> https://jsonplaceholder.typicode.com/
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<table>
+ 
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/37351206/203982044-f516d1b4-f16d-4fbb-8550-8b1c2f149b78.jpg" height="600"></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/37351206/203982182-3d46c35d-face-4994-bcb3-4d2d645d7691.jpg" height="600"></td>   
+    <td valign="top"><img src="https://user-images.githubusercontent.com/37351206/203984281-1d7ef062-016a-4a62-8712-80eec4a951a3.jpg" height="600"></td>
+  </tr>
+ </table>
+ 
